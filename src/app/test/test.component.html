@@ -1,0 +1,21 @@
+<p>test works!</p>
+<h3 [ngClass]="'First second'">Test component using structure directive</h3>
+<h3 [ngClass]="setColorClass">class using structure directive using variable</h3>
+<div>
+<input type="text" #get>
+<div>
+    <button (click)="setValue(get.value)">click</button>
+</div>
+<div>
+<h3 [ngClass]="data">input value is correct</h3>
+</div>
+
+<h3 [ngStyle]="{'color':'blue','font-weight':'bold'}">class using ng style directive</h3>
+<h4 [ngStyle]="dt">class using ng style with variable</h4>
+
+
+<div [innerHTML]="tst"></div>
+<div [attr.innerHTML]="tst"></div>
+
+
+

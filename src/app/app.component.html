@@ -1,0 +1,48 @@
+<!--<div class="row">
+	<div class="col">
+		<div ngbDropdown class="d-inline-block">
+			<button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+				Toggle dropdown
+			</button>
+			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				<button ngbDropdownItem>Action - 1</button>
+				<button ngbDropdownItem>Another Action</button>
+				<button ngbDropdownItem>Something else is here</button>
+			</div>
+		</div>
+	</div>-->
+<h2  style="text-align: center;">Test Form</h2>
+<div class="form-container">
+  <form [formGroup]="TestForm">
+    <div class="form-group">
+      <label>username</label>
+      <input type="text" [class.is-invalid]="TestForm.get('user')?.invalid" class="form-control" formControlName="user" >
+      <small [class.d-none]="TestForm.get('user')?.valid" class="text-danger">user name is invalid</small>
+
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="pass">
+    </div>
+    <div>
+      <select style="margin-top: 5px;" #val (change)="getValue(val.value)">
+        <option>Pune</option>
+        <option>Mumbai</option>
+        <option>Hydrabad</option>
+        <option>Latur</option>
+      </select>
+    </div>
+    <div>
+      <label for="testcheckbox">testcheckbox</label>
+      <input type="checkbox" name="testcheckbox" #dt (click)="getCheckBoxValue(dt.value)">
+
+    </div>
+    <div class="form-group">
+    <button style="margin-top: 20px;" class="btn btn-primary" [disabled]="!TestForm.valid"(click)="getFormData()" type="submit">Login</button>
+    </div>
+  </form>
+</div>
+<h3>{{data}}</h3>
+<h3>{{checkbool}}</h3>
+<router-outlet></router-outlet>
+<!--<app-test></app-test>-->
